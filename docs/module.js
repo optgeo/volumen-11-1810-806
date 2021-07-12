@@ -30,6 +30,7 @@ const showMap = async (texts) => {
     hash: true,
     style: 'style.json'
   })
+  map.transform._fov = 0.9
   map.addControl(new mapboxgl.NavigationControl())
   map.addControl(new mapboxgl.ScaleControl({
     maxWidth: 200, unit: 'metric'
