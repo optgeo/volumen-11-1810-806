@@ -30,7 +30,6 @@ const showMap = async (texts) => {
     hash: true,
     style: 'style.json'
   })
-  map.transform._fov = 0.9
   map.addControl(new mapboxgl.NavigationControl())
   map.addControl(new mapboxgl.ScaleControl({
     maxWidth: 200, unit: 'metric'
@@ -52,7 +51,7 @@ const showMap = async (texts) => {
     })
 
     map.on('moveend', () => {
-      if (map.getZoom() < 16 && !speechSynthesis.speaking) {
+      if (map.getZoom() < 15 && !speechSynthesis.speaking) {
         let u = new SpeechSynthesisUtterance()
 	u.lang = 'ja-JP'
 	u.text = '拡大してください。'
